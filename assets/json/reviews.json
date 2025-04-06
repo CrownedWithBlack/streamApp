@@ -1,0 +1,37 @@
+[
+    {
+    "title": "Avatar 1",
+    "review": "Avatar (2009) es una épica de ciencia ficción dirigida por James Cameron, que nos lleva al mundo de Pandora, donde un ex-marine debe infiltrarse entre los Na'vi, una raza indígena, en un conflicto por sus tierras. Visualmente impresionante y pionera en el uso de la 3D.",
+    "titleID": "card1"
+    },
+    {
+    "title": "Avatar 2",
+    "review": "Avatar: The Way of Water (2022) continúa la historia de Jake y Neytiri en Pandora, explorando nuevos paisajes acuáticos y enfrentándose a desafíos personales y ambientales. La película destaca por sus impresionantes efectos visuales, aunque su narrativa es similar a la original.",
+    "titleID": "card2"
+    },
+    {
+    "title": "Kill Bill Vol. 1",
+    "review": "Kill Bill Vol. 1 (2003) de Quentin Tarantino es una película de acción llena de sangre, venganza y estilo. La protagonista, la Novia, busca vengarse de quienes intentaron matarla. Con un homenaje a los géneros de kung-fu y samuráis, es una película inolvidable.",
+    "titleID": "card3"
+    },
+    {
+    "title": "Joker",
+    "review": "Joker (2019), dirigida por Todd Phillips, cuenta el origen de uno de los villanos más icónicos de los cómics, Arthur Fleck. Es una desgarradora crítica social que muestra cómo la desesperación puede dar paso a la locura. Joaquin Phoenix ofrece una actuación sobresaliente.",
+    "titleID": "card4"
+    },
+    {
+    "title": "Sonic the Hedgehog 2",
+    "review": "Sonic the Hedgehog 2 (2022) sigue las aventuras del icónico erizo azul mientras enfrenta al malvado Dr. Robotnik. Con más acción, humor y un toque nostálgico para los fanáticos de los videojuegos, es una secuela entretenida para toda la familia.",
+    "titleID": "card5"
+    },
+    {
+    "title": "The Batman",
+    "review": "The Batman (2022), dirigida por Matt Reeves, ofrece una visión más oscura y detectivesca del Caballero Oscuro. Robert Pattinson aporta una nueva interpretación al personaje, mientras enfrenta a villanos como el Riddler. Es una película más introspectiva que sus predecesoras.",
+    "titleID": "card6"
+    },
+    {
+    "title": "Léon: The Professional",
+    "review": "Léon: The Professional (1994) es un clásico del cine de acción, dirigido por Luc Besson. La historia de un asesino profesional que cuida a una niña huérfana ofrece una dinámica única de mentor-aprendiz, mientras se desarrollan temas de lealtad y venganza.",
+    "titleID": "card7"
+    }
+]

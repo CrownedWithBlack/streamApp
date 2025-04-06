@@ -1,0 +1,152 @@
+/* ===== Selectores de etiqueta ===== */
+body {
+    background-color: #c3c1c9;
+    background-image: linear-gradient(180deg, #606C76, #DBE8EC);
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+/* ===== Selectores de clase ===== */
+.btn-danger,
+.btn-primary {
+    background-color: #9F63D5;
+    border-color: black;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.buttons {
+    object-position: bottom;
+}
+
+.card {
+    height: 400px;
+    width: 100%;
+    padding-right: 10px;
+    background-color: rgb(226, 223, 223);
+}
+
+.card-img-top {
+    height: 250px;
+    padding: 10px;
+    object-fit: contain;
+    margin: 5px;
+    background-color: rgb(238, 234, 234);
+}
+
+.card-title {
+    margin-top: -15px;
+}
+
+.carousel-control-next {
+    width: 150px;
+}
+
+.carousel-control-next-icon {
+    background-image: url("../assets/images/svg/right-arrow.svg");
+}
+
+.carousel-control-prev {
+    width: 150px;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("../assets/images/svg/left-arrow.svg");
+    left: 10px;
+}
+
+.carousel-indicators {
+    margin: 0px;
+    top: 400px;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #9F63D5;  /* Color de los indicadores */
+    padding: 2px;
+}
+
+.form-control:focus {
+    border-color: #9F63D5;
+    box-shadow: none; /*Muestra una sombra cuando se le hace focus al elemento*/
+}
+
+.genreTitle {
+    margin-top: 10px;
+}
+
+.imgBrand {
+    height: 50px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(159, 99, 213, 0.5);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header i {
+    font-size: 50px;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.movieReel {
+    height: 70px;
+}
+
+.nav-link {
+    color: #c3c1c9;
+    font-weight: bolder;
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 20px rgba(190, 152, 229, 1);
+    color: rgb(190, 152, 229);
+}
+
+.navbar {
+    background-color: #606C76;
+    box-shadow: 0 0 20px rgba(159, 99, 213, 0.5);
+}
+
+.passwordImage {
+    height: 25px;
+}
+
+.sonic2 {
+    object-position: top; /* Determina que parte de la imagen se muestra dentro de un contenedor, util cuando se usa object-fit: cover en el contenedor */
+}
+
+.usernameImage {
+    height: 20px;
+}
+
+/* ===== Selectores de ID ===== */
+#loginButton {
+    background-color: #9F63D5;
+    border-color: black;
+}
+
+/* ===== Pseudoclases ===== */
+#loginButton:hover,
+.btn-danger:hover,
+.btn-primary:hover {
+    background-color: rgb(190, 152, 229);
+}
