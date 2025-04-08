@@ -14,6 +14,8 @@ Una vez tengas los archivos se recomienda abrir el proyecto con Visual studio co
 de Live server.
 - Obtén Live server aquí: https://marketplace.visualstudio.com/items/?itemName=ritwickdey.LiveServer
 
+Posicionáte sobre el explorador de archivos de VSCode que se encuentra en el lado izquierdo, ubica el archivo llamado `index.html`, da lick derecho sobre él y seleccionma **Abrir con Live Server**.
+
 ## Capturas
 ### Login
 ![login](capturas/login.jpg)
