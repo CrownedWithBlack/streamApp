@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function getReview(cardId) {
-
         fetch("../assets/json/reviews.json")
         .then((response) => {
             if (!response.ok) {
