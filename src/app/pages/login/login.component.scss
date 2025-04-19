@@ -1,0 +1,43 @@
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(159, 99, 213, 0.5);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header i {
+    font-size: 50px;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.movieReel {
+    height: 70px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.form-control:focus {
+    border-color: #9F63D5;
+    box-shadow: none; /*Muestra una sombra cuando se le hace focus al elemento*/
+}
+
+.passwordImage {
+    height: 25px;
+}
+
+.usernameImage {
+    height: 20px;
+}

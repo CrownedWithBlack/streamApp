@@ -1,26 +1,22 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
-import { SeriesComponent } from './pages/series/series.component';
-import { PeliculasComponent} from './pages/peliculas/peliculas.component';
-import { GenerosComponent } from './pages/generos/generos.component';
-import { FavoritosComponent } from './pages/favoritos/favoritos.component';
-import { ConfigComponent } from './pages/config/config.component';
+import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 
 
 export const routes: Routes = [
-    { path: 'login', component: LoginComponent },
     {
-        path: 'home',
-        component: HomeComponent,
-        children: [
-        { path: 'series', component: SeriesComponent },
-        { path: 'peliculas', component: PeliculasComponent },
-        { path: 'favoritos', component: FavoritosComponent },
-        { path: 'generos', component: GenerosComponent },
-        { path: 'configuracion', component: ConfigComponent }
+        path: 'home', component: HomeComponent, children: [
+            { path: '', redirectTo: 'catalogo', pathMatch: 'full'},
+            { path: 'catalogo', component: CatalogoComponent},
+            { path: 'series', loadComponent: () => import('./pages/series/series.component').then((c) => c.SeriesComponent) },
+            { path: 'peliculas', loadComponent: () => import('./pages/peliculas/peliculas.component').then((c) => c.PeliculasComponent) },
+            { path: 'favoritos', loadComponent: () => import('./pages/favoritos/favoritos.component').then((c) => c.FavoritosComponent) },
+            { path: 'generos', loadComponent: () => import('./pages/generos/generos.component').then((c) => c.GenerosComponent)},
+            { path: 'configuracion', loadComponent: () => import('./pages/config/config.component').then((c) => c.ConfigComponent)}
         ]
     },
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', redirectTo: 'home' }
+    { path: 'login', component: LoginComponent },
+    { path: '', redirectTo: 'home/catalogo', pathMatch: 'full' },
+    { path: '**', redirectTo: 'home/catalogo'},
     ];
