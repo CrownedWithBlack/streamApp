@@ -4,97 +4,30 @@
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <!--primer lote de elementos del carousel-->
-            <div class="carousel-item active">
-                <div class="row justify-content-center">
-                    <div class="col-md-3">
-                        <div class="card" id="card1">
-                            <img src="../assets/images/webp/avatar1.webp" class="card-img-top" alt="Avatar 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Avatar 1</h5>
-                                <p class="card-text">Pocahontas azul del espacio.</p>
-                                <div class="d-flex justify-content-center buttons">
-                                    <button class="btn btn-primary mx-4 show-more" card-id="card1">Ver</button>
-                                    <button class="btn btn-danger mx-4 hide-title buttons" id="btnAvatar1" card-id="card1">Ocultar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" id="card2">
-                            <img src="../assets/images/webp/avatar2.webp" class="card-img-top" alt="Avatar 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Avatar 2</h5>
-                                <p class="card-text">Pocahontas azul del espacio y agua.</p>
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn btn-primary mx-4 show-more" card-id="card2">Ver</button>
-                                    <button class="btn btn-danger mx-4 hide-title"id="btnAvatar2" card-id="card2">Ocultar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" id="card3">
-                            <img src="../assets/images/webp/killBill1.webp" class="card-img-top" alt="Kill Bill">
-                            <div class="card-body">
-                                <h5 class="card-title">Kill Bill </h5>
-                                <p class="card-text">Peleas con espadas, muy sangrienta.</p>
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn btn-primary mx-4 show-more" card-id="card3">Ver</button>
-                                    <button class="btn btn-danger mx-4 hide-title" id="btnKillBill" card-id="card3">Ocultar</button>
+            <ng-container *ngFor="let slide of moviesPerSlide; let i = index">
+                <div class="carousel-item" [class.active]="i == 0">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3 flex-lg-column" *ngFor="let card of slide; let i = index">
+                            <div class="card" [id]="card.titleID">
+                                <img [src]="card.path" class="card-img-top" [alt]="card.title">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">{{card.title}}</h5>
+                                    <p class="card-text">{{card.review}}</p>
+                                    <div class="mt-auto d-flex flex-wrap justify-content-center buttons">
+                                        <button class="btn btn-primary mx-4 show-more">Ver</button>
+                                        <button class="btn btn-danger mx-4 hide-title buttons" id="btnAvatar1">Ocultar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--segundo lote de elementos del carousel-->
-            <div class="carousel-item">
-                <div class="row justify-content-center">
-                    <div class="col-md-3">
-                        <div class="card" id="card4">
-                            <img src="../assets/images/webp/joker.webp" class="card-img-top" alt="The joker">
-                            <div class="card-body">
-                                <h5 class="card-title">El Bromas</h5>
-                                <p class="card-text">Está pelicula no tuvo segunda parte.</p>
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn btn-primary mx-4 show-more" card-id="card4">Ver</button>
-                                    <button class="btn btn-danger mx-4 hide-title" id="btnJoker" card-id="card4">Ocultar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" id="card5">
-                            <div><img src="../assets/images/webp/sonic2.webp" class="card-img-top sonic2" alt="Sonic 2"></div>
-                            <div class="card-body">
-                                <h5 class="card-title">Sonic 2</h5>
-                                <p class="card-text">Gotta go fast.</p>
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn btn-primary mx-4 show-more" card-id="card5">Ver</button>
-                                    <button class="btn btn-danger mx-4 hide-title" id="btnSonic" card-id="card5">Ocultar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" id="card6">
-                            <img src="../assets/images/webp/theBatman.webp" class="card-img-top" alt="The Batman">
-                            <div class="card-body">
-                                <h5 class="card-title">The Batman </h5>
-                                <p class="card-text">Aún no la veo, pero dicen que es muy buena.</p>
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn btn-primary mx-4 show-more" card-id="card6">Ver</button>
-                                    <button class="btn btn-danger mx-4 hide-title" id="btnBatman" card-id="card6">Ocultar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--termina lote de elementos del carousel-->
+            </ng-container>
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -140,3 +73,5 @@
         </div>
     </div>
 </div>
+
+
