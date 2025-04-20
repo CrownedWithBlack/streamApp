@@ -1,0 +1,9 @@
+<div class="modal-header">
+    <h5 class="modal-title">{{title}}</h5>
+</div>
+<div class="modal-body">
+    <p id="watch-movie-text">Realmente desea remover {{title}} de la lista?</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" id="btn-watch" (click)="removeMovie()">Eliminar</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-cancel" (click)="closeModal()">Regresar</button>
