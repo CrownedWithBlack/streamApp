@@ -16,10 +16,13 @@ export class RemoveMovieComponent {
 
 constructor(private removeMovieModal: NgbActiveModal, private customModalService: ModalService) {}
 
+//esta función se dispara por medio del evento (click) en el template, si el usuario confirma que desea eliminar
+//la pelicula devuelve un true, este valor lo espera el modal.service.ts para eejcutar la logica de eliminación
   removeMovie(): void {
     this.removeMovieModal.close(true);
   }
 
+  //cierra el modal
   closeModal(): void {
     this.removeMovieModal.close();
   }

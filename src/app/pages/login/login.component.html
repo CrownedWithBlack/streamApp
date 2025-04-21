@@ -1,7 +1,7 @@
 <div class="container-md">
     <div class="login-container">
         <div class="login-header">
-            <img src="assets/images/webp/movieReel.webp" class="movieReel">
+            <img [src]="imgLogoUrl" class="movieReel">
             <h2>Iniciar Sesión</h2>
             <p class="text-muted">Ingresa tus credenciales para continuar</p>
         </div>
@@ -10,7 +10,7 @@
             <div class="mb-3">
                 <label for="username" class="form-label">Usuario</label>
                 <div class="input-group">
-                    <span class="input-group-text"> <img src="assets/images/webp/username.webp" class="usernameImage"></span>
+                    <span class="input-group-text"> <img [src]="imgUserUrl" class="usernameImage"></span>
                     <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario">
                     <span class="input-group-text"></span>
                 </div>
@@ -19,7 +19,7 @@
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
                 <div class="input-group">
-                    <span class="input-group-text"> <img src="assets/images/webp/password.webp" class="passwordImage"></span>
+                    <span class="input-group-text"> <img [src]="imgPassUrl" class="passwordImage"></span>
                     <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
                     <span class="input-group-text"></span>
                 </div>

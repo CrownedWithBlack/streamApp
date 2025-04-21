@@ -8,36 +8,27 @@ import { RemoveMovieComponent } from '../../shared/components/modals/remove-movi
   providedIn: 'root'
 })
 export class ModalService {
-
-  private moviesPerSlide: any[][] =[];
-
   constructor(private modalService: NgbModal) {}
 
+  //mostramos el componente compartido: ViewMoreModalComponent por medio del modalService, también se asignan algunos valores
   watchModal(title: string, id: number, review: string): void {
     const modal = this.modalService.open(ViewMoreModalComponent);
     modal.componentInstance.title = title;
     modal.componentInstance.body = review;
   }
 
-  // hideModal(title: string, id:number, moviesPerSlide: any[][]): void {
-    
-  //   const modal = this.modalService.open(RemoveMovieComponent);
-  //   modal.componentInstance.title = title;
-
-  //   modal.result.then((response) => {
-  //     if (response) {
-  //       this.removeMovie(id, moviesPerSlide);
-  //     }
-  //   });
-  // }
+  //esta es la función callback que se llama en los componentes principales, lo que hace es esperar por la respuesta del modal
+  //espera un boolean desde su componente modal, si es true se ejecuta la lógica del callback, de lo contrario solo lo cierra
   hideModal(title: string, id:number, onConfirm: () => void): void {
-    
     const modal = this.modalService.open(RemoveMovieComponent);
     modal.componentInstance.title = title;
 
     modal.result.then((response) => {
       if (response) {
         onConfirm();
+      }
+      else {
+        modal.close();
       }
     });
   }

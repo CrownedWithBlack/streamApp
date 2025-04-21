@@ -14,10 +14,12 @@ export class ViewMoreModalComponent {
 
   constructor(private watchMovieModal:NgbActiveModal ) {}
 
+//esta función se dispara por medio del evento (click) en el template, muestra un placeholder
   watchMovie(): void {
     alert("Proximamente!");
   }
 
+  //esta función se dispara por medio del evento (click) en el template, cierra el modal
   closeModal(): void {
     this.watchMovieModal.dismiss();
   }
