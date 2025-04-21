@@ -31,6 +31,7 @@ Esto instalará los archivos necesarios para el proyecto, una vez que termine, v
 ![detalle](readmeAssets/detalle.jpg)
 
 ## Dependencias / Bibliotecas
+- Node.js 22.14.0 LTS
  - Angular 18.2.18
  - Bootstrap 5.3.5
  - ng-Bootstrap 17.0.1

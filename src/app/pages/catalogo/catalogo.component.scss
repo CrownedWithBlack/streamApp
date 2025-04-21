@@ -44,3 +44,13 @@
     padding: 2px;
 } 
 
+.btn-danger,
+.btn-primary {
+    background-color: #9F63D5;
+    border-color: black;
+}
+
+.btn-danger:hover,
+.btn-primary:hover {
+    background-color: rgb(190, 152, 229);
+}

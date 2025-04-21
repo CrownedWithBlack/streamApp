@@ -17,6 +17,6 @@ export const routes: Routes = [
         ]
     },
     { path: 'login', component: LoginComponent },
-    { path: '', redirectTo: 'home/catalogo', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: '**', redirectTo: 'home/catalogo'},
     ];

@@ -27,6 +27,8 @@
     width: 100%;
     padding: 10px;
     font-weight: 600;
+    background-color: #9F63D5;
+    border-color: black;
 }
 
 .form-control:focus {
@@ -40,4 +42,8 @@
 
 .usernameImage {
     height: 20px;
+}
+
+.btn-login:hover {
+    background-color: rgb(190, 152, 229);
 }
