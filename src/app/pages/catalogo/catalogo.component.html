@@ -7,7 +7,6 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <!--primer lote de elementos del carousel-->
             <ng-container *ngFor="let slide of moviesPerSlide; let i = index">
                 <div class="carousel-item" [class.active]="i == 0">
                     <div class="row justify-content-center">

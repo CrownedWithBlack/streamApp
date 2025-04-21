@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map} from 'rxjs';
-
+import { Movie } from '../../interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ export class LoadDataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getMovies(): Observable<[]> {
-    return this.httpClient.get<any>(this.jsonURL);
+  getMovies(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(this.jsonURL);
   }
 
   getPosters(): Observable<any> {

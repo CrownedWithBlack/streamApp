@@ -2,43 +2,43 @@
     {
         "title": "Avatar 1",
         "review": "Una aventura visual en un mundo alienígena lleno de maravillas naturales.",
-        "titleID": "card1",
+        "titleID": 1,
         "path": "assets/images/webp/posters/avatar1.webp"
     },
     {
         "title": "Avatar 2",
         "review": "Una nueva travesía submarina en Pandora con paisajes deslumbrantes.",
-        "titleID": "card2",
+        "titleID": 2,
         "path": "assets/images/webp/posters/avatar2.webp"
     },
     {
         "title": "Kill Bill Vol. 1",
         "review": "Acción estilizada y artes marciales en una historia de venganza intensa.",
-        "titleID": "card3",
+        "titleID": 3,
         "path": "assets/images/webp/posters/killBill1.webp"
     },
     {
         "title": "Joker",
         "review": "Un retrato crudo de un hombre en busca de identidad en una sociedad rota.",
-        "titleID": "card4",
+        "titleID": 4,
         "path": "assets/images/webp/posters/joker.webp"
     },
     {
         "title": "Sonic the Hedgehog 2",
         "review": "Diversión, velocidad y aventura para toda la familia.",
-        "titleID": "card5",
+        "titleID": 5,
         "path": "assets/images/webp/posters/sonic2.webp"
     },
     {
         "title": "The Batman",
         "review": "Una versión oscura y detectivesca del icónico héroe de Gotham.",
-        "titleID": "card6",
+        "titleID": 6,
         "path": "assets/images/webp/posters/theBatman.webp"
     },
     {
         "title": "Léon: The Professional",
         "review": "Una conexión inesperada en medio de un mundo peligroso.",
-        "titleID": "card7",
+        "titleID": 7,
         "path": "assets/images/webp/posters/leon.webp"
     }
 ]

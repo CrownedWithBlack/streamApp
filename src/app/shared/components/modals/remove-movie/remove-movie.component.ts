@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalService } from '../../../../services/modals/modal.service';
 
 @Component({
   selector: 'app-remove-movie',
@@ -10,12 +11,13 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class RemoveMovieComponent {
 @Input() title = '';
-@Input() titleID = '';
+@Input() titleID = 0;
+@Input() moviesPerSlide = 0;
 
-constructor(private removeMovieModal: NgbActiveModal) {}
+constructor(private removeMovieModal: NgbActiveModal, private customModalService: ModalService) {}
 
   removeMovie(): void {
-    this.removeMovieModal.close('true');
+    this.removeMovieModal.close(true);
   }
 
   closeModal(): void {
