@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "testcc": "ng test --code-coverage",
     "serve:ssr:streamApp": "node dist/stream-app/server/server.mjs"
   },
   "private": true,

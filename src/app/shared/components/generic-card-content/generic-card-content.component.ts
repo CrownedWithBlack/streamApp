@@ -21,12 +21,26 @@ export class GenericCardContentComponent {
     //llama al servicio que nos trae los datos del json
     this.jsonService.getMovies().subscribe(movies => {
       movies.forEach(movie => this.moviesCollection.push(movie));
-      console.log(this.moviesCollection)
-    })
+    });
+
+
+
+
   }
 
   //Esta función se dispara desde el template HMTL con el evento (click)
   launchWatchMovieModal(title: string, id: number, review: string): void {
+        // service.getMovies().subscribe((movies: any[]) => {
+    //   expect(movies[0]).toEqual(mockMovie);
+
+this.jsonService.getMovies().subscribe( movies => {
+  console.log(movies[0])
+});
+
+
+
+
+
     this.customModalService.watchModal(title, id, review);//lama al servicio de modals y muestra el respectivo modal
   }
 
