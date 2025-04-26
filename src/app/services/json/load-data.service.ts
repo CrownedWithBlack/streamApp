@@ -7,7 +7,7 @@ import { Movie } from '../../interfaces/movie.interface';
   providedIn: 'root'
 })
 export class LoadDataService {
-  private jsonURL: string = './assets/json/reviews.json';
+  private jsonURL: string = 'assets/json/reviews.json';
 
   constructor(private httpClient: HttpClient) { }
 
