@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewMoreModalComponent } from './view-more-modal.component';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('ViewMoreModalComponent', () => {
   let component: ViewMoreModalComponent;
@@ -8,7 +9,8 @@ describe('ViewMoreModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewMoreModalComponent]
+      imports: [ViewMoreModalComponent],
+      providers: [NgbActiveModal]
     })
     .compileComponents();
 

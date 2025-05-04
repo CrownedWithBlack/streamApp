@@ -1,8 +1,4 @@
-import { NgForOf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { LoadDataService } from '../../services/json/load-data.service';
-import { Movie } from '../../interfaces/movie.interface';
-import { ModalService } from '../../services/modals/modal.service';
+import { Component } from '@angular/core';
 import { GenericCardContentComponent } from "../../shared/components/generic-card-content/generic-card-content.component";
 
 @Component({

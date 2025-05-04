@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RemoveMovieComponent } from './remove-movie.component';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('RemoveMovieComponent', () => {
   let component: RemoveMovieComponent;
@@ -8,7 +8,8 @@ describe('RemoveMovieComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RemoveMovieComponent]
+      imports: [RemoveMovieComponent],
+      providers: [NgbActiveModal]
     })
     .compileComponents();
 

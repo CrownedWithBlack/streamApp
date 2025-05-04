@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../../interfaces/movie.interface';
 import { LoadDataService } from '../../../services/json/load-data.service';
 import { ModalService } from '../../../services/modals/modal.service';
+
 @Component({
   selector: 'app-generic-card-content',
   standalone: true,
@@ -22,25 +23,13 @@ export class GenericCardContentComponent {
     this.jsonService.getMovies().subscribe(movies => {
       movies.forEach(movie => this.moviesCollection.push(movie));
     });
-
-
-
-
   }
 
   //Esta función se dispara desde el template HMTL con el evento (click)
   launchWatchMovieModal(title: string, id: number, review: string): void {
-        // service.getMovies().subscribe((movies: any[]) => {
-    //   expect(movies[0]).toEqual(mockMovie);
-
-this.jsonService.getMovies().subscribe( movies => {
-  console.log(movies[0])
-});
-
-
-
-
-
+    // this.jsonService.getMovies().subscribe( movies => {
+    //   console.log(movies[0])
+    // });
     this.customModalService.watchModal(title, id, review);//lama al servicio de modals y muestra el respectivo modal
   }
 

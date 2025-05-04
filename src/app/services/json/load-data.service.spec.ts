@@ -1,8 +1,7 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { LoadDataService } from './load-data.service';
 import { Movie } from '../../interfaces/movie.interface';
-import { HttpClientTestingModule, HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 describe('LoadDataService', () => {
   let service: LoadDataService;
@@ -32,17 +31,17 @@ describe('LoadDataService', () => {
   });
 
   it('debería traer un array de peliculas',() => {
-    service.getMovies().subscribe((movies: Movie[]) => {
+    service.getMovies().subscribe((movies: Movie[]) => {//llamamos al servicio real y checamos si sus datos conicidencon los datos mockeados que tenemos
       expect(movies).toEqual(mockMovie);
     });
 
-    const req = httpMock.expectOne(jsonUrl);
-    expect(req.request.method).toBe('GET');
-    req.flush(mockMovie);
+    const req = httpMock.expectOne(jsonUrl);//esperamos una conexion de la url especificada
+    expect(req.request.method).toBe('GET');//checamos si se uso el metodo get
+    req.flush(mockMovie);//le decimos que fuerze el retorno de los datos de prueba
   });
 
   afterEach(() => {
-    httpMock.verify();
+    httpMock.verify();//checa que no hayay quedado ninguna conexion pendiente, si lo hay falla
   });
 
 });
