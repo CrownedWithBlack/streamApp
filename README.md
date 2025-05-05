@@ -33,11 +33,9 @@ Para leer el reporte de code coverage ve al file explorer de VsCode a la ruta:
 ### Code coverage terminal
 ![terminal](readmeAssets/codeCoverageTerminal.png)
 ### Login
-![login](readmeAssets/login.jpg)
+![login](readmeAssets/login.png)
 ### Catálogo
-![catalogo](readmeAssets/catalogo.jpg)
-### Detale
-![detalle](readmeAssets/detalle.jpg)
+![catalogo](readmeAssets/catalogo.png)
 
 ## Dependencias / Bibliotecas
 - Node.js 22.14.0 LTS
@@ -58,7 +56,7 @@ También agregué estilos CSS globales en el **styles.css** en el directorio ra�
 Respecto a las pruebas me enfoqué en testear todas las funciones del proyecto, dandole prioridad a los servicios y componentes compartidos, ya que estos son críticos para el proyecto. Para mayores detalles técnicos especificos la gran mayoría del código está comentado, exceptuando el boilerplate y uno que otro array que funge como mock de datos.
 
 ## Problemas conocidos
-En este sprint no toqué nada que mejorar o empeorara la aplicación ya que fue puro testing, exceptuando la pequeña optimización que hice, por lo que los problemas conocidos son los mismos de la versión anterior; bugs visuales de responsividad.
+En este sprint no toqué nada que mejorara o empeorara la aplicación ya que fue puro testing, exceptuando la pequeña optimización que hice, por lo que los problemas conocidos son los mismos de la versión anterior; bugs visuales de responsividad.
 
 ## Retrospectiva
 ### ¿Qué hice bien?
@@ -66,4 +64,4 @@ La reutilización de componentes quedó muy bien ya que el código se redujo en 
 ### ¿Qué no salió bien?
 En general todo se me dificultó ya que nunca había usado angular, ahora si le sumamos aprender jasmine, que es el "framework del framework :dizzy_face:". Mi mayor dolor de cabeza siguen siendo los componentes de ngBootsrtrap, pero paso a paso ahí vamos. También hubo un statement que simplemente no pude cubrir el cual estaba dentro de una función con callback.
 ### ¿Qué puedo hacer diferente?
-Ya me decidí a eliminar el carrusel de bootstrap que tengo en el componente de catalogo ya que siento que no es muy apropiado para el tipo de app que es, me di cuenta de esto visitando algunas páginas de peliculas piratas jejeje. Tengo pensando en sustiuirlo con una vista "clásica" de cards como las que manejo en los otros componentes, pero la diferencia sería en tratar de implementar un efecto similar al **"endless scrolling"**, ya que al ser el catalogo principal, en teoría debe mostrar todo el contenido disponible y un simple carrusel no es apto para tal cantidad de contenido.
+Ya me decidí a eliminar el carrusel de bootstrap que tengo en el componente de catalogo ya que siento que no es muy apropiado para el tipo de app que es, me di cuenta de esto visitando algunas páginas de peliculas piratas jejeje. Tengo pensando en sustiuirlo con una vista "clásica" de cards como las que manejo en los otros componentes, pero la diferencia sería en tratar de implementar un efecto similar al **"endless scrolling"**, ya que al ser el catalogo principal, en teoría debe mostrar todo el contenido disponible y el carrusel no es apto para desplegar tal cantidad de contenido.
