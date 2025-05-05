@@ -10,7 +10,7 @@ En este segundo sprint procuré arreglar la deuda tecnica que dejé en el anteri
 
 ## Instalación / Como usar
 - Descargar el repositorio directo desde GitHub: https://github.com/CrownedWithBlack/streamApp.git
-- Clona el repositorio: `gh repo clone CrownedWithBlack/streamApp`
+- Clona el repositorio: `git clone https://github.com/CrownedWithBlack/streamApp.git`
 
 
 Una vez tengas los archivos en tu equipo, abre tu IDE, se recomienda usar VSCode. Una vez en vscode abre la terminal y navega hasta la ruta raíz del proyecto, para asegurarte que estés en la raíz usa el comando `ls` en la terminal, deberías ver algo como esto:
@@ -19,10 +19,19 @@ Una vez tengas los archivos en tu equipo, abre tu IDE, se recomienda usar VSCode
 
 Ahora usa el comando `npm install`, si no tienes instalado node/npm, lo puedes encontrar aquí: https://nodejs.org/es
 
-Esto instalará los archivos necesarios para el proyecto, una vez que termine, vuelve a la terminal y escribe el comando `ng serve`. En la terminal se mostrara una dirección de localhost haz `ctrl + click` para abrir el enlace y se muestre el proyecto.
+Esto instalará los archivos necesarios para el proyecto, una vez que termine, vuelve a la terminal y escribe el comando `npm run testcc` para ejecutar el script de tests con code coverage o ejecuta el comando `ng test` para ejecutar las pruebas sin code coverage.
+
+Para leer el reporte de code coverage ve al file explorer de VsCode a la ruta:
+**coverage\stream-app\index.html**. Haz click drecho sobre el archivo **index.html** y después en Open with Live Server.
 
 
 ## Capturas
+### Code coverage Istanbul reporter
+![istanbul](readmeAssets/codeCoverageIstanbulReport.png)
+### Code coverage Karma report
+![karma](readmeAssets/codeCoverageKarmaReport.png)
+### Code coverage terminal
+![terminal](readmeAssets/codeCoverageTerminal.png)
 ### Login
 ![login](readmeAssets/login.jpg)
 ### Catálogo
@@ -38,30 +47,23 @@ Esto instalará los archivos necesarios para el proyecto, una vez que termine, v
 
 
 ## ¿Cómo lo hice?
-Mi enfoque principal fue en hacerlo lo más modular y escalable posible, esto para reducir la carga de trabajo en futuros sprints. Esto lo logre por medio de algunos componentes compartidos los cuales se encuentran en la carpeta de **shared**. Además de eso, opté por crear un layout de rutas para ayudar a la reutilización de componentes, un ejemplo es el **nav bar** en la ruta de home **home**:
+Antes de comenzar a escribir las pruebas decidí eliminar el código repetitivo para reducir la carga de trabajo, además de que se veía feo con las mismas lineas repetidas en varios componentes, aquí una muestra de cuantas lineas se eliminaron:
 
-<p align=center>
-    &lt;app-nav-bar&gt;&lt;/app-nav-bar&gt;
-</p>
-<p align=center>
-&lt;router-outlet&gt;&lt;/router-outlet&gt;
-</p>
+![linesChanged](readmeAssets/linesChanged.png)
 
-De esta manera el nav bar se queda estático y el router se encarga de manejar las siguiente direcciones por medio de las rutas hijas de home: `home/catalogo, home/series`, etc.
-También pensé en agregar mas directivas al template y generar contenido parametrizado por medio de `@Input()`de manera aún más dinamica, pero por falta de tiempo lo pospondré, aún así el código hardcodeado se redujo muchisimo en comparación con el sprint anterior.
+Esto lo logré creando un **componente compartido** llamado `generic-card-content`. Este componente tiene la misma estructura que los componentes de **series, peliculas, favortios, etc..**. Entonces dentro de esos componetes, en su **template html** correspondiente solamente llamo a la directiva `<app-generic-card-content>` y le paso el titulo correspondiente por medio de **@Input**, quedando así: `<app-generic-card-content [pageTitle]="'tituloCorrespdiente'">`.
 
-En cuanto a librerías, quise seguir usando bootstrap ya que primero quiero tener cierto nivel de expericencia con un framework antes de pasarme a otro. En primera instacia decidí utilizar **bootstrap vanilla**, lo que hice fue instalarlo por medio de la terminal, después copié las rutas del `node_modules` y las añadí al `angular.json`. Cuando llegué a la parte de los modals tuve problemas y después de una pequeña investigación descubrí que los modals con **bootstrap vanilla** no son muy angular-friendly, por lo que instale **ngBootsrap** para manejar la logica de modals desde el script, para esto generé un **componente compartido** y un **servicio** que muestre los modals.
+También agregué estilos CSS globales en el **styles.css** en el directorio raíz, anterioremente lo había intentado pero no funcionaban, me di cuenta que como había instalado bootstrap y agregado la dependecia del **node_modules** en el ***angular.json*** entraba en conflicto, por lo que eliminé la dependecia y dejando el `@import 'bootstrap/scss/bootstrap'` dentro del **styles.css** :sweat_smile:.
 
-Esta vez toda la carga de datos; **paths**, **nombres**, **ids**, **reviews** se hace por medio de un json, para esto generé un **service** que hace la carga de datos usando el metodo `get` del `HttpClient`, también creé una **interface** para que me ayude con el tipado de datos del **service**. Cabe mencionar que todos los elementos están debidamente ordenados dentro de la estructura de carpetas.
+Respecto a las pruebas me enfoqué en testear todas las funciones del proyecto, dandole prioridad a los servicios y componentes compartidos, ya que estos son críticos para el proyecto. Para mayores detalles técnicos especificos la gran mayoría del código está comentado, exceptuando el boilerplate y uno que otro array que funge como mock de datos.
 
 ## Problemas conocidos
-Al igual que en el sprint anterior la mayoría de problemas son visuales, lo que más me sigue costando trabajo es que los elementos se comporten de manera apropiada en resoluciones muy pequeñas.
+En este sprint no toqué nada que mejorar o empeorara la aplicación ya que fue puro testing, exceptuando la pequeña optimización que hice, por lo que los problemas conocidos son los mismos de la versión anterior; bugs visuales de responsividad.
 
 ## Retrospectiva
 ### ¿Qué hice bien?
-Estoy muy satisfecho con el nivel de reutilización de código que logré, si bien aún existe área de oportunidad, el nivel alcanzado es superior.
+La reutilización de componentes quedó muy bien ya que el código se redujo en 247 lineas. También el code coverage quedó en muy buen porcentaje quedando en un **91.56%** para los statements y en un **89.55%** para las lineas. Me hubiera gustado alcanzar un 100% pero si está difícil :sweat_smile:.
 ### ¿Qué no salió bien?
-Al igual que en el sprint anterior el carrusel de bootstrap me sigue dando dolores de cabeza, llegué a considerar en quitarlo y dejar solo las cards, pero me gusta imponerme retos para aprender más, así que de momento lo dejaré. También tuve muuuchos problemas con los modals de ngBootstrap, ya que se me dificulta algo la comunicación entre componentes debido al intercambio de tipos de datos que se dan, y le dediqué mucho tiempo  a resolverlo, por fortuna al final lo logré resolver y los modal quedaron bien.
+En general todo se me dificultó ya que nunca había usado angular, ahora si le sumamos aprender jasmine, que es el "framework del framework :dizzy_face:". Mi mayor dolor de cabeza siguen siendo los componentes de ngBootsrtrap, pero paso a paso ahí vamos. También hubo un statement que simplemente no pude cubrir el cual estaba dentro de una función con callback.
 ### ¿Qué puedo hacer diferente?
-Sonará un poco a excusa, pero siento que el curso que nos proporcionaron no ayudó mucho. Así que de ahora en adelante si vuelvo a notar que algún otro curso se queda corto lo complementaré con otro curso de youtube o alguna otra fuente.
-Además de que en este nuevo sprint me dedicaré a crear pequeños proyectos personales en angular para adquirir más experiencia.
+Ya me decidí a eliminar el carrusel de bootstrap que tengo en el componente de catalogo ya que siento que no es muy apropiado para el tipo de app que es, me di cuenta de esto visitando algunas páginas de peliculas piratas jejeje. Tengo pensando en sustiuirlo con una vista "clásica" de cards como las que manejo en los otros componentes, pero la diferencia sería en tratar de implementar un efecto similar al **"endless scrolling"**, ya que al ser el catalogo principal, en teoría debe mostrar todo el contenido disponible y un simple carrusel no es apto para tal cantidad de contenido.
