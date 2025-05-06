@@ -60,7 +60,7 @@ En este sprint no toqué nada que mejorara o empeorara la aplicación ya que fue
 
 ## Retrospectiva
 ### ¿Qué hice bien?
-La reutilización de componentes quedó muy bien ya que el código se redujo en 247 lineas. También el code coverage quedó en muy buen porcentaje quedando en un **91.56%** para los statements y en un **89.55%** para las lineas. Me hubiera gustado alcanzar un 100% pero si está difícil :sweat_smile:.
+La reutilización de componentes quedó muy bien ya que el código se redujo en 247 lineas. También el code coverage quedó en muy buen porcentaje quedando en un **96.38%** para los statements y en un **95.52%** para las lineas. Me hubiera gustado alcanzar un 100% pero si está difícil :sweat_smile:.
 ### ¿Qué no salió bien?
 En general todo se me dificultó ya que nunca había usado angular, ahora si le sumamos aprender jasmine, que es el "framework del framework :dizzy_face:". Mi mayor dolor de cabeza siguen siendo los componentes de ngBootsrtrap, pero paso a paso ahí vamos. También hubo un statement que simplemente no pude cubrir el cual estaba dentro de una función con callback.
 ### ¿Qué puedo hacer diferente?

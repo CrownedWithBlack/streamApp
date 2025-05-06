@@ -66,8 +66,5 @@ describe('ModalService', () => {
   
     //checa si el callback fue llamado
     expect(callbackSpy).toHaveBeenCalled();
-
   });
-
-
 });
