@@ -36,6 +36,8 @@ Para leer el reporte de code coverage ve al file explorer de VsCode a la ruta:
 ![login](readmeAssets/login.png)
 ### Catálogo
 ![catalogo](readmeAssets/catalogo.png)
+## Mock
+![mock](readmeAssets/mock.png)
 
 ## Dependencias / Bibliotecas
 - Node.js 22.14.0 LTS
